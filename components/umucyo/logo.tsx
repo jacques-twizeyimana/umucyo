@@ -44,7 +44,7 @@ export function Logo({
       <Emblem size={size} alt="" />
       <span className="uc-logo-rule" aria-hidden="true" />
       <span className="uc-logo-word">
-        <span className="uc-logo-name">umucyo</span>
+        <span className="uc-logo-name">Umucyo</span>
         {subtitle ? <span className="uc-logo-sub">{subtitle}</span> : null}
       </span>
     </Link>
