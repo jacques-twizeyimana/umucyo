@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { Button, Notice, StatusBadge } from "@/components/umucyo";
 
-function OtpInput({ label, value, onChange, disabled }: { label: string; value: string[]; onChange?: (v: string[]) => void; disabled?: boolean }) {
+export function OtpInput({ label, value, onChange, disabled }: { label: string; value: string[]; onChange?: (v: string[]) => void; disabled?: boolean }) {
   const refs = useRef<Array<HTMLInputElement | null>>([]);
   return (
     <div className="ob-otp" role="group" aria-label={label}>

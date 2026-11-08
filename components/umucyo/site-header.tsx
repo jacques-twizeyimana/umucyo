@@ -27,7 +27,7 @@ export function SiteHeader({ active }: { active?: NavItem }) {
           ))}
         </nav>
         <div className="uc-header-actions">
-          <Button variant="ghost" size="sm" icon="lock" href="/dashboard">
+          <Button variant="ghost" size="sm" icon="lock" href="/sign-in">
             Sign in
           </Button>
           <Button variant="secondary" size="sm" href="/register">

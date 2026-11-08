@@ -46,7 +46,12 @@ export function GovBanner({ lang = "EN" }: { lang?: "RW" | "EN" | "FR" }) {
         </div>
         <div className="uc-gov-langs" role="group" aria-label="Language">
           {langs.map(([code, name]) => (
-            <a key={code} href="#" lang={code.toLowerCase()} aria-current={code === lang ? "true" : undefined}>
+            <a
+              key={code}
+              href="#"
+              lang={code.toLowerCase()}
+              aria-current={code === lang ? "true" : undefined}
+            >
               {name}
             </a>
           ))}
@@ -63,7 +68,7 @@ const FOOTER: { title: string; links: [string, string][] }[] = [
     links: [
       ["Search tenders", "/tenders"],
       ["Closing this week", "/tenders?status=closing"],
-      ["Save a search & get alerts", "/dashboard/preferences"],
+      // ["Save a search & get alerts", "/dashboard/preferences"],
     ],
   },
   {
@@ -79,9 +84,12 @@ const FOOTER: { title: string; links: [string, string][] }[] = [
     title: "Get started",
     links: [
       ["Register your business", "/register"],
-      ["Get a digital certificate", "/how-to-bid#journey"],
+      [
+        "Get a digital certificate",
+        "https://www.govca.rw/apply/searchIndvdlProductList.sg",
+      ],
       ["How to bid", "/how-to-bid"],
-      ["Guides & training", "/how-to-bid#glossary"],
+      // ["Guides & training", "/how-to-bid#glossary"],
     ],
   },
   {
@@ -89,7 +97,7 @@ const FOOTER: { title: string; links: [string, string][] }[] = [
     links: [
       ["Help centre", "/how-to-bid#faq"],
       ["Report fraud or corruption", "/legal-framework#f5"],
-      ["Request a review", "/legal-framework#f5"],
+      // ["Request a review", "/legal-framework#f5"],
       ["Service status", "/terms#t7"],
     ],
   },
@@ -98,9 +106,9 @@ const FOOTER: { title: string; links: [string, string][] }[] = [
     links: [
       ["Terms of use", "/terms"],
       ["Privacy policy", "/privacy"],
-      ["Cookie settings", "/privacy#p2"],
+      // ["Cookie settings", "/privacy#p2"],
       ["Legal framework & mandate", "/legal-framework"],
-      ["Accessibility", "/terms#t2"],
+      // ["Accessibility", "/terms#t2"],
     ],
   },
 ];
@@ -113,8 +121,8 @@ export function SiteFooter() {
           <div>
             <Logo />
             <p className="uc-footer-help">
-              The official portal for public tenders in Rwanda, operated by the Rwanda Public Procurement Authority
-              (RPPA).
+              The official portal for public tenders in Rwanda, operated by the
+              Rwanda Public Procurement Authority (RPPA).
             </p>
             <a className="uc-footer-call" href="tel:3131">
               <Icon name="phone" size={16} />
@@ -136,8 +144,8 @@ export function SiteFooter() {
         </div>
         <div className="uc-footer-base">
           <span>
-            © 2026 Rwanda Public Procurement Authority · Governed by Law N° 031/2022 of 21/11/2022 governing public
-            procurement
+            © 2026 Rwanda Public Procurement Authority · Governed by Law N°
+            031/2022 of 21/11/2022 governing public procurement
           </span>
           <span className="uc-concept">Redesign concept · sample data</span>
         </div>
@@ -192,7 +200,8 @@ export function LegalLayout({
           <div className="uc-legal-meta">
             {updated ? (
               <span>
-                Last updated <strong style={{ color: "var(--ink)" }}>{updated}</strong>
+                Last updated{" "}
+                <strong style={{ color: "var(--ink)" }}>{updated}</strong>
               </span>
             ) : null}
             {version ? <span className="uc-ref">{version}</span> : null}

@@ -152,3 +152,26 @@ html { scroll-behavior: smooth; }
 @media (max-width: 900px) {
   .uc-footer-grid { grid-template-columns: 1fr 1fr; }
 }
+
+/* Sign in */
+.si-shell { display: grid; grid-template-columns: minmax(0, 520px) minmax(0, 1fr); gap: 48px; align-items: start; padding-top: 56px; padding-bottom: 80px; max-width: 1120px; }
+.si-card { gap: 20px; }
+.si-title { font-size: 32px; line-height: 38px; outline: none; }
+.si-lead { margin-top: 8px; font-size: 17px; line-height: 26px; }
+.si-error { display: inline-flex; align-items: flex-start; gap: 6px; color: var(--danger); font-size: 14px; line-height: 20px; font-weight: 500; }
+.si-error .uc-icon { margin-top: 2px; }
+.uc-input[aria-invalid="true"] { border-color: var(--danger); box-shadow: inset 0 0 0 1px var(--danger); }
+.si-reveal { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); }
+.si-aside { position: relative; overflow: hidden; background: var(--navy-deep); color: var(--on-navy); border-radius: var(--radius-lg); padding: 40px; }
+.si-aside-sun { position: absolute; right: -90px; bottom: -150px; width: 280px; height: 280px; border-radius: 50%; background: var(--sun); opacity: 0.95; }
+.si-aside-title { margin: 0; font-family: var(--font-display); font-size: 34px; line-height: 40px; font-weight: 700; letter-spacing: -0.025em; max-width: 360px; }
+.si-aside-icon { width: 40px; height: 40px; border-radius: var(--radius-sm); display: grid; place-items: center; background: var(--navy); color: var(--sun); border: 1px solid var(--navy-line); }
+.si-aside-foot { margin: 0; display: grid; grid-template-columns: 18px 1fr; gap: 10px; font-size: 14px; line-height: 21px; color: var(--on-navy-muted); padding-top: 20px; border-top: 1px solid var(--navy-line); max-width: 420px; }
+.uc .si-aside-foot a { color: var(--on-navy); }
+@media (max-width: 900px) {
+  .si-shell { grid-template-columns: minmax(0, 1fr); gap: 24px; padding-top: 24px; padding-bottom: 48px; }
+  .si-aside { padding: 28px 24px; }
+  .si-aside-title { font-size: 26px; line-height: 32px; }
+  .si-aside-sun { width: 180px; height: 180px; right: -70px; bottom: -110px; }
+}
+.uc .si-aside .uc-footer-call { color: var(--on-navy); text-decoration: none; }
