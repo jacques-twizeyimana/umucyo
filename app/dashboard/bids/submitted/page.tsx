@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { AppShell } from "@/components/dashboard/shell";
-import { Button, KeyDates, Notice, StatusBadge } from "@/components/umucyo";
+import { Button, Confetti, KeyDates, Notice, StatusBadge } from "@/components/umucyo";
 import type { KeyDateItem } from "@/lib/data";
 
 export const metadata: Metadata = { title: "Bid submitted" };
@@ -39,6 +39,8 @@ export default function BidSubmittedPage() {
       crumbs={[{ label: "My bids", href: "/dashboard/bids" }, { label: "Submitted", href: "/dashboard/bids" }, { label: "Rubavu website" }]}
       bodyStyle={{ maxWidth: 1120 }}
     >
+      {/* Plays once when arriving from "Sign and submit bid". */}
+      <Confetti />
       <section className="uc-on-navy receipt-hero" aria-labelledby="ok-h">
         <div aria-hidden="true" className="receipt-ring" />
         <div aria-hidden="true" className="receipt-sun" />

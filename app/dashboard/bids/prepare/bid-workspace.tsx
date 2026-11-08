@@ -218,7 +218,7 @@ export function BidWorkspace() {
               ))}
             </ul>
             {ready ? (
-              <Button variant="primary" size="lg" full iconRight="arrow-right" href="/dashboard/bids/submitted">
+              <Button variant="primary" size="lg" full iconRight="arrow-right" href="/dashboard/bids/submitted?celebrate">
                 Sign and submit bid
               </Button>
             ) : (

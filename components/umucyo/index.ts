@@ -7,3 +7,4 @@ export { GovBanner, SiteFooter, LegalLayout } from "./chrome";
 export { SiteHeader, type NavItem } from "./site-header";
 export { TenderCard } from "./tender-card";
 export { SearchBar } from "./search-bar";
+export { Confetti } from "./confetti";
