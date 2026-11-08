@@ -7,10 +7,14 @@
   --on-navy: #ffffff;
   --on-navy-muted: #b9c4e0;
   --navy-soft: #e8edf8;
+  /* Yellow is reserved for urgency: warnings, amendments, items due soon. Never decoration or progress. */
   --sun: #fad201;
   --sun-hover: #ffdf3d;
   --on-sun: #0b1530;
   --sun-soft: #fff6c7;
+  /* Identity accents: light blue on navy grounds, a soft blue tint for highlights on white. */
+  --accent-on-navy: #9db8ff;
+  --accent-soft: #d6e0f5;
   --gov-blue: #1a3578;
   --on-gov-blue: #ffffff;
   --surface: #ffffff;

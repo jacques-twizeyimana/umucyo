@@ -1,14 +1,47 @@
 import Link from "next/link";
 import { SitePage } from "@/components/site-page";
-import { Button, Icon, Notice, SearchBar, Steps, TenderCard, type IconName } from "@/components/umucyo";
+import {
+  Button,
+  Icon,
+  Notice,
+  SearchBar,
+  Steps,
+  TenderCard,
+  type IconName,
+} from "@/components/umucyo";
 import { AWARDS, CATEGORIES, FIRST_BID_STEPS, cardsFor } from "@/lib/data";
 import { HeroChips } from "./hero-chips";
 
-const CATEGORY_TILES: { name: (typeof CATEGORIES)[number]; icon: IconName; desc: string; count: string }[] = [
-  { name: "Goods", icon: "file", count: "412", desc: "Equipment, supplies, vehicles, IT hardware and medical consumables." },
-  { name: "Works", icon: "building", count: "318", desc: "Buildings, roads, water, energy and maintenance works." },
-  { name: "Consultancy services", icon: "edit", count: "297", desc: "Studies, design, supervision, audit, software and advisory." },
-  { name: "Non-consultancy services", icon: "check-circle", count: "257", desc: "Cleaning, catering, security, transport and events." },
+const CATEGORY_TILES: {
+  name: (typeof CATEGORIES)[number];
+  icon: IconName;
+  desc: string;
+  count: string;
+}[] = [
+  {
+    name: "Goods",
+    icon: "file",
+    count: "412",
+    desc: "Equipment, supplies, vehicles, IT hardware and medical consumables.",
+  },
+  {
+    name: "Works",
+    icon: "building",
+    count: "318",
+    desc: "Buildings, roads, water, energy and maintenance works.",
+  },
+  {
+    name: "Consultancy services",
+    icon: "edit",
+    count: "297",
+    desc: "Studies, design, supervision, audit, software and advisory.",
+  },
+  {
+    name: "Non-consultancy services",
+    icon: "check-circle",
+    count: "257",
+    desc: "Cleaning, catering, security, transport and events.",
+  },
 ];
 
 const CLOSING_SOON = [
@@ -31,17 +64,21 @@ export default function Home() {
           <div className="uc-hero-ring" aria-hidden="true" />
           <div className="uc-hero-sun" aria-hidden="true" />
           <div className="uc-container uc-hero-in">
-            <p className="uc-eyebrow" style={{ color: "var(--on-navy-muted)", margin: "0 0 16px" }}>
+            <p
+              className="uc-eyebrow"
+              style={{ color: "var(--on-navy-muted)", margin: "0 0 16px" }}
+            >
               1,284 open tenders right now
             </p>
             <h1 id="hero-title" className="uc-hero-title">
               Rwanda is building. <em>Supply what it needs.</em>
             </h1>
             <p className="uc-hero-sub">
-              Every public tender in Rwanda, in one place — written plainly, with every date, document and site visit up
-              front. Search free, bid online, and see every award.
+              Every public tender in Rwanda, in one place — written plainly,
+              with every date, document and site visit up front. Search free,
+              bid online, and see every award.
             </p>
-            <SearchBar onNavy />
+            <SearchBar />
             <HeroChips />
           </div>
         </section>
@@ -58,9 +95,20 @@ export default function Home() {
               </div>
               <Button href="/tenders">Advanced search</Button>
             </div>
-            <div className="pg-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 24 }}>
+            <div
+              className="pg-grid-4"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
+                gap: 24,
+              }}
+            >
               {CATEGORY_TILES.map((cat) => (
-                <Link key={cat.name} className="pg-tile" href={`/tenders?cat=${encodeURIComponent(cat.name)}`}>
+                <Link
+                  key={cat.name}
+                  className="pg-tile"
+                  href={`/tenders?cat=${encodeURIComponent(cat.name)}`}
+                >
                   <span className="pg-tile-icon">
                     <Icon name={cat.icon} size={22} />
                   </span>
@@ -75,7 +123,15 @@ export default function Home() {
                   >
                     {cat.name}
                   </span>
-                  <span style={{ fontSize: 15, lineHeight: "22px", color: "var(--ink-muted)" }}>{cat.desc}</span>
+                  <span
+                    style={{
+                      fontSize: 15,
+                      lineHeight: "22px",
+                      color: "var(--ink-muted)",
+                    }}
+                  >
+                    {cat.desc}
+                  </span>
                   <span
                     style={{
                       marginTop: "auto",
@@ -98,7 +154,10 @@ export default function Home() {
         </section>
 
         {/* Closing soon */}
-        <section className="uc-section uc-section-sunk" aria-labelledby="soon-title">
+        <section
+          className="uc-section uc-section-sunk"
+          aria-labelledby="soon-title"
+        >
           <div className="uc-container">
             <div className="uc-section-head">
               <div>
@@ -136,16 +195,25 @@ export default function Home() {
         </section>
 
         {/* Follow the money */}
-        <section className="uc-section uc-section-sunk" aria-labelledby="money-title">
+        <section
+          className="uc-section uc-section-sunk"
+          aria-labelledby="money-title"
+        >
           <div className="uc-container">
             <div className="uc-section-head">
               <div>
                 <p className="uc-eyebrow">Follow the money</p>
-                <h2 id="money-title" className="uc-h2" style={{ margin: "0 0 8px" }}>
+                <h2
+                  id="money-title"
+                  className="uc-h2"
+                  style={{ margin: "0 0 8px" }}
+                >
                   Recently awarded contracts
                 </h2>
                 <p className="uc-lead" style={{ maxWidth: 640 }}>
-                  Every award decision is published: which company was paid, for how much, and how many bids competed. Follow any supplier or public entity, and download it all as open data.
+                  Every award decision is published: which company was paid, for
+                  how much, and how many bids competed. Follow any supplier or
+                  public entity, and download it all as open data.
                 </p>
               </div>
               <Button href="/spending" iconRight="arrow-right">
@@ -177,7 +245,10 @@ export default function Home() {
                   {AWARDS.slice(0, 4).map((a) => (
                     <tr key={a.ref}>
                       <td>
-                        <Link href={`/spending?q=${encodeURIComponent(a.ref)}`} style={{ fontWeight: 600, color: "var(--ink)" }}>
+                        <Link
+                          href={`/spending?q=${encodeURIComponent(a.ref)}`}
+                          style={{ fontWeight: 600, color: "var(--ink)" }}
+                        >
                           {a.title}
                         </Link>
                         <div className="uc-ref">{a.ref}</div>
@@ -198,13 +269,29 @@ export default function Home() {
         <section className="uc-section" aria-label="Help and integrity">
           <div
             className="uc-container"
-            style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 24 }}
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: 24,
+            }}
           >
-            <Notice tone="info" title="Stuck? Talk to a person." action="Open the help centre" href="/how-to-bid#faq">
-              Call the toll-free line 3131, or +250 788 123 100 from abroad. Ask in Kinyarwanda, English or French.
+            <Notice
+              tone="info"
+              title="Stuck? Talk to a person."
+              action="Open the help centre"
+              href="/how-to-bid#faq"
+            >
+              Call the toll-free line 3131, or +250 788 123 100 from abroad. Ask
+              in Kinyarwanda, English or French.
             </Notice>
-            <Notice tone="amended" title="Spotted something wrong?" action="Report fraud or corruption" href="/legal-framework#f5">
-              Report suspected collusion, bribery or bid-rigging. You can report anonymously.
+            <Notice
+              tone="info"
+              title="Spotted something wrong?"
+              action="Report fraud or corruption"
+              href="/legal-framework#f5"
+            >
+              Report suspected collusion, bribery or bid-rigging. You can report
+              anonymously.
             </Notice>
           </div>
         </section>

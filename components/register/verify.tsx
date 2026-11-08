@@ -80,7 +80,7 @@ export function VerifyStep({ email, phone, back }: { email: string; phone: strin
             </p>
           </div>
           <span aria-live="polite">
-            {phoneDone ? <StatusBadge status="open">Verified</StatusBadge> : <StatusBadge status="closing">Waiting for code</StatusBadge>}
+            {phoneDone ? <StatusBadge status="open">Verified</StatusBadge> : <StatusBadge status="neutral">Waiting for code</StatusBadge>}
           </span>
         </div>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 16, alignItems: "center" }}>

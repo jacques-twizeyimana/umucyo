@@ -118,7 +118,7 @@ html, body { background: var(--surface); }
 .app-match { display: inline-flex; align-items: center; gap: 4px; height: 24px; padding: 0 8px; border-radius: var(--radius-xs); background: var(--navy-soft); color: var(--ink); font: 600 12px/1 var(--font-sans); }
 .app-tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); }
 .app-tabs a { display: inline-flex; gap: 8px; align-items: center; height: 44px; padding: 0 16px; color: var(--ink-muted); text-decoration: none; font-weight: 600; font-size: 15px; border-bottom: 3px solid transparent; margin-bottom: -1px; }
-.app-tabs a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--sun); }
+.app-tabs a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--navy); }
 .app-tabs .n { font: 600 12px/1 var(--font-mono); padding: 4px 6px; border-radius: 4px; background: var(--surface-sunk); }
 .app-toggle { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid var(--line); cursor: pointer; }
 .app-toggle:first-of-type { border-top: 0; }
@@ -133,7 +133,7 @@ html, body { background: var(--surface); }
 .app-pipe div { display: flex; flex-direction: column; gap: 6px; font-size: 12px; line-height: 16px; color: var(--ink-muted); }
 .app-pipe div::before { content: ""; height: 6px; border-radius: 3px; background: var(--line); }
 .app-pipe .done::before { background: var(--navy); }
-.app-pipe .now::before { background: var(--sun); }
+.app-pipe .now::before { background: var(--navy-line); }
 .app-pipe .now { color: var(--ink); font-weight: 600; }
 .app-progress { height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; }
 .app-progress span { display: block; height: 100%; background: var(--navy); border-radius: 4px; }

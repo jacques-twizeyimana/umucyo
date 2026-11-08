@@ -17,7 +17,6 @@ export function SearchBar({
   placeholder = "What can you supply? e.g. laptops, road works, audit",
   cta = "Search tenders",
   variant = "full",
-  onNavy,
   onSearch,
 }: {
   query?: string;
@@ -26,7 +25,6 @@ export function SearchBar({
   placeholder?: string;
   cta?: string;
   variant?: "full" | "compact";
-  onNavy?: boolean;
   /** When given, handles the search instead of navigating to /tenders. */
   onSearch?: (v: { q: string; cat: string; loc: string }) => void;
 }) {
@@ -72,7 +70,7 @@ export function SearchBar({
       {compact ? null : (
         <Select id={`${id}-loc`} label="Location" hideLabel options={LOCATION_OPTIONS} value={loc} onChange={setLoc} />
       )}
-      <Button variant={onNavy ? "accent" : "primary"} size="lg" type="submit" icon="search">
+      <Button variant="primary" size="lg" type="submit" icon="search">
         {cta}
       </Button>
     </form>

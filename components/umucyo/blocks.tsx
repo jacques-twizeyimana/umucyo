@@ -96,7 +96,8 @@ export function ActionPanel({
   const pad = (n: number) => String(n).padStart(2, "0");
   return (
     <aside className="uc-panel" aria-label="Bid actions">
-      <div className="uc-panel-head uc-on-navy">
+      {/* The countdown turns yellow only when the deadline is a week away or less. */}
+      <div className={cx("uc-panel-head uc-on-navy", days != null && days <= 7 && "uc-panel-urgent")}>
         <span className="uc-deadline-label">{label}</span>
         <p className="uc-panel-date">{deadline}</p>
         {days != null ? (

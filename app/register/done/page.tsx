@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: "Account created" };
 const STATUS: { title: string; note: string; icon: IconName; tone: "ok" | "wait" | "todo"; badge: BadgeStatus; label: string }[] = [
   { title: "Email verified", note: "tenders@ikazelabs.rw", icon: "check", tone: "ok", badge: "open", label: "Done" },
   { title: "Phone verified", note: "+250 788 000 412", icon: "check", tone: "ok", badge: "open", label: "Done" },
-  { title: "Documents", note: "RDB registration and tax clearance 2025/26 are being checked by RPPA.", icon: "clock", tone: "wait", badge: "closing", label: "In review" },
+  { title: "Documents", note: "RDB registration and tax clearance 2025/26 are being checked by RPPA.", icon: "clock", tone: "wait", badge: "neutral", label: "In review" },
   { title: "Digital certificate", note: "Needed to sign bids. Apply at govca.rw.", icon: "lock", tone: "todo", badge: "closed", label: "Not yet" },
   { title: "Tender alerts", note: "Tell us what you sell to get matching tenders.", icon: "bookmark", tone: "todo", badge: "closed", label: "Not set" },
 ];

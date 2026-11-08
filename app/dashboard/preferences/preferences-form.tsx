@@ -374,7 +374,7 @@ export function PreferencesForm() {
             }}
           >
             Last month, these settings would have sent you about{" "}
-            <strong style={{ color: "var(--sun)", fontFamily: "var(--font-mono)" }}>{estimate}</strong> alerts for 23 matching tenders.
+            <strong style={{ color: "var(--accent-on-navy)", fontFamily: "var(--font-mono)" }}>{estimate}</strong> alerts for 23 matching tenders.
           </p>
         </div>
         <button type="button" className="uc-btn uc-btn-primary uc-btn-lg uc-btn-full" onClick={() => setSaved(true)}>

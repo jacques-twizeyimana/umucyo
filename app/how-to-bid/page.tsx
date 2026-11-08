@@ -144,7 +144,7 @@ export default function HowToBidPage() {
                       gap: 10,
                     }}
                   >
-                    <span style={{ width: 32, height: 4, background: "var(--sun)", borderRadius: 2 }} />
+                    <span style={{ width: 32, height: 4, background: "var(--navy)", borderRadius: 2 }} />
                     {j.n}
                   </span>
                   <h3 className="uc-h3">{j.title}</h3>

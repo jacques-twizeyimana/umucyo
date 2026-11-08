@@ -355,7 +355,7 @@ export function SpendingRecord() {
             Award decisions are published by each public entity. Values are in Rwandan francs, including taxes, as stated in
             the award decision. Every record is free to download and reuse.
           </Notice>
-          <Notice tone="amended" title="See a problem in a contract?" action="Report fraud or corruption" href="/legal-framework#f5">
+          <Notice tone="info" title="See a problem in a contract?" action="Report fraud or corruption" href="/legal-framework#f5">
             Report suspected collusion, bribery or bid-rigging. You can report anonymously.
           </Notice>
         </div>

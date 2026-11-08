@@ -95,7 +95,7 @@ export function Representative() {
         </span>
       </label>
       {onBehalf ? (
-        <div style={{ display: "flex", flexDirection: "column", gap: 12, padding: 16, borderRadius: "var(--radius-md)", background: "var(--sun-soft)" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 12, padding: 16, borderRadius: "var(--radius-md)", background: "var(--navy-soft)" }}>
           <strong style={{ fontSize: 15 }}>Upload a signed authorisation letter</strong>
           <span className="ob-hint" style={{ color: "var(--ink)" }}>
             Signed by {role === "CEO" ? "the CEO," : role === "Owner" ? "the owner," : "the president,"} Aline Uwase, naming you as
