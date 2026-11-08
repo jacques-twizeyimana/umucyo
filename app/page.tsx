@@ -35,7 +35,7 @@ export default function Home() {
               1,284 open tenders right now
             </p>
             <h1 id="hero-title" className="uc-hero-title">
-              Build for Rwanda. <em>Win public work.</em>
+              Rwanda is building. <em>Supply what it needs.</em>
             </h1>
             <p className="uc-hero-sub">
               Every public tender in Rwanda, in one place — written plainly, with every date, document and site visit up
