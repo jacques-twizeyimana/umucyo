@@ -62,9 +62,17 @@ const FOOTER: { title: string; links: [string, string][] }[] = [
     title: "Find work",
     links: [
       ["Search tenders", "/tenders"],
-      ["Procurement plans", "/awards"],
-      ["Awarded contracts", "/awards"],
-      ["Open data & API", "/awards#data"],
+      ["Closing this week", "/tenders?status=closing"],
+      ["Save a search & get alerts", "/dashboard/preferences"],
+    ],
+  },
+  {
+    title: "Where the money went",
+    links: [
+      ["Contract history", "/spending"],
+      ["Supplier directory", "/spending?view=suppliers"],
+      ["Public entity directory", "/spending?view=entities"],
+      ["Open data & API", "/spending#data"],
     ],
   },
   {

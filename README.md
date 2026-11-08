@@ -19,7 +19,7 @@ Open http://localhost:3000.
 
 | Area | Routes |
 | --- | --- |
-| Public site | `/` home · `/tenders` search with filters · `/tenders/[ref]` tender detail · `/how-to-bid` · `/awards` |
+| Public site | `/` home · `/tenders` search with filters · `/tenders/[ref]` tender detail · `/how-to-bid` · `/spending` where the money went (contract history, supplier and entity directories) |
 | Legal | `/terms` · `/privacy` · `/legal-framework` |
 | Supplier onboarding | `/register` → `/register/business` → `/documents` → `/contact` → `/verify` → `/register/done`, or `/register/individual` → `/verify` |
 | Supplier dashboard | `/dashboard` · `/recommended` · `/watchlist` · `/bids` · `/bids/prepare` · `/bids/submitted` · `/preferences` |

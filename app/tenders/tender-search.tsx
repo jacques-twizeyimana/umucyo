@@ -145,7 +145,7 @@ function TenderSearchInner() {
                 Search everything public entities in Rwanda are buying right now.
               </p>
             </div>
-            <Link href="/awards">Looking for past awards? Browse awarded contracts</Link>
+            <Link href="/spending">Looking for past contracts? See where the money went</Link>
           </div>
           <SearchBar key={`${q}|${catParam}|${locParam}`} query={q} category={catParam ?? undefined} location={locParam ?? undefined} />
         </div>
@@ -319,7 +319,7 @@ function TenderSearchInner() {
           ) : null}
 
           <div style={{ marginTop: 16 }}>
-            <Notice tone="info" title="Building something with this data?" action="Open data & API" href="/awards#data">
+            <Notice tone="info" title="Building something with this data?" action="Open data & API" href="/spending#data">
               Every tender and award is available as open data. Download the results of any search as CSV or JSON.
             </Notice>
           </div>

@@ -122,8 +122,8 @@ export function WatchlistTable() {
         <div id="watch-table" className="app-panel" style={{ color: "var(--ink-muted)" }}>
           {tab === "Closed"
             ? "4 tenders you watched have closed. Their opening reports and decisions will appear here."
-            : "2 tenders you watched have been awarded. See who won in Plans & awards."}{" "}
-          <Link href="/awards">Browse awarded contracts</Link>
+            : "2 tenders you watched have been awarded. See who won and for how much."}{" "}
+          <Link href="/spending">See where the money went</Link>
         </div>
       )}
     </>

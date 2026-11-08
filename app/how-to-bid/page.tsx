@@ -50,7 +50,7 @@ const FAQ = [
   { q: "My business is new. Can I still win anything?", a: "Start with tenders whose requirements you can meet today. Smaller purchases by request for quotations usually ask for less experience. Joint ventures with established firms are another route." },
   { q: "What happens if my upload fails close to the deadline?", a: "The system enforces the deadline to the minute and late bids cannot be submitted. Upload early, check your receipt, and call 3131 straight away if something goes wrong." },
   { q: "Can I change my bid after I submit it?", a: "Yes, until the deadline. You can replace or withdraw it as the tender documents allow. After the deadline, bids are locked." },
-  { q: "How will I know if I won?", a: "Every bidder is notified of the award decision, and the decision is published on the tender page and in Awarded contracts." },
+  { q: "How will I know if I won?", a: "Every bidder is notified of the award decision, and the decision is published on the tender page and in Where the money went." },
   { q: "What if I think a decision was unfair?", a: "The public procurement law gives bidders the right to request a review, within strict deadlines. Use “Request a review” on the tender page or read the Legal framework page." },
 ];
 

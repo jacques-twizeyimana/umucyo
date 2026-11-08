@@ -43,7 +43,7 @@ const INSTRUMENTS: [string, string][] = [
 
 export default function LegalFrameworkPage() {
   return (
-    <SitePage active="For public entities">
+    <SitePage>
       <main id="main">
         <LegalLayout
           eyebrow="Legal · Transparency"

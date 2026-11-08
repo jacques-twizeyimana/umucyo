@@ -145,11 +145,11 @@ export default function Home() {
                   Recently awarded contracts
                 </h2>
                 <p className="uc-lead" style={{ maxWidth: 640 }}>
-                  Every award decision is published: who won, for how much, and when. Download it all as open data.
+                  Every award decision is published: which company was paid, for how much, and how many bids competed. Follow any supplier or public entity, and download it all as open data.
                 </p>
               </div>
-              <Button href="/awards" iconRight="arrow-right">
-                Browse all awards
+              <Button href="/spending" iconRight="arrow-right">
+                See where the money went
               </Button>
             </div>
             <div
@@ -177,7 +177,7 @@ export default function Home() {
                   {AWARDS.slice(0, 4).map((a) => (
                     <tr key={a.ref}>
                       <td>
-                        <Link href="/awards" style={{ fontWeight: 600, color: "var(--ink)" }}>
+                        <Link href={`/spending?q=${encodeURIComponent(a.ref)}`} style={{ fontWeight: 600, color: "var(--ink)" }}>
                           {a.title}
                         </Link>
                         <div className="uc-ref">{a.ref}</div>

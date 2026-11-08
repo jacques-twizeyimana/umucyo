@@ -5,13 +5,11 @@ import { useState } from "react";
 import { Button } from "./button";
 import { Logo } from "./logo";
 
-export type NavItem = "Find tenders" | "Plans & awards" | "For suppliers" | "For public entities" | "Help";
+export type NavItem = "Find tenders" | "For suppliers" | "Help";
 
 const NAV: [NavItem, string][] = [
   ["Find tenders", "/tenders"],
-  ["Plans & awards", "/awards"],
   ["For suppliers", "/how-to-bid"],
-  ["For public entities", "/legal-framework"],
   ["Help", "/how-to-bid#faq"],
 ];
 

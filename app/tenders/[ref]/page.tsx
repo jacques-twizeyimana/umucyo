@@ -296,13 +296,13 @@ async function TenderContent({ params }: { params: PageProps<"/tenders/[ref]">["
                 <dd>{t.entity}</dd>
                 <dt>Procurement plan</dt>
                 <dd>
-                  <Link href="/awards">{d.about.plan}</Link>
+                  {d.about.plan}
                 </dd>
                 <dt>Funding source</dt>
                 <dd>{d.about.funding}</dd>
                 <dt>Past awards</dt>
                 <dd>
-                  <Link href="/awards">{d.about.pastAwards}</Link>
+                  <Link href={`/spending?entity=${encodeURIComponent(t.entity)}`}>{d.about.pastAwards}</Link>
                 </dd>
               </dl>
             </section>
