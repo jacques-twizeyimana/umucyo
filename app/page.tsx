@@ -63,22 +63,17 @@ export default function Home() {
           <div className="uc-hero-ring2" aria-hidden="true" />
           <div className="uc-hero-ring" aria-hidden="true" />
           <div className="uc-hero-sun" aria-hidden="true" />
+          {/* Read order: slogan, then search, then supporting copy and shortcuts. */}
           <div className="uc-container uc-hero-in">
-            <p
-              className="uc-eyebrow"
-              style={{ color: "var(--on-navy-muted)", margin: "0 0 16px" }}
-            >
-              1,284 open tenders right now
-            </p>
             <h1 id="hero-title" className="uc-hero-title">
               Rwanda is building. <em>Supply what it needs.</em>
             </h1>
+            <SearchBar placeholder="What can you supply? e.g. laptops, road works" />
             <p className="uc-hero-sub">
-              Every public tender in Rwanda, in one place — written plainly,
-              with every date, document and site visit up front. Search free,
-              bid online, and see every award.
+              1,284 open tenders right now from every public buyer in Rwanda,
+              written plainly with every date, document and site visit up front.
+              Search free, bid online, and see every award.
             </p>
-            <SearchBar />
             <HeroChips />
           </div>
         </section>

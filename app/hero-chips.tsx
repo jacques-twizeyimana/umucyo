@@ -17,7 +17,7 @@ export function HeroChips() {
   const [picked, setPicked] = useState<string | null>(null);
   return (
     <div className="uc-hero-chips">
-      <span>Popular:</span>
+      <span>Popular searches</span>
       {CHIPS.map(([label, href]) => (
         <Chip
           key={label}

@@ -46,10 +46,10 @@ html, body { background: var(--surface); }
   .uc-nav, .uc-header-actions .uc-btn-secondary { display: none; }
   .uc-header-actions { margin-left: auto; }
   .uc-hero { padding: 48px 0 56px; }
-  .uc-hero-title { font-size: 44px; line-height: 46px; }
+  .uc-hero-title { font-size: 44px; line-height: 46px; margin-bottom: var(--space-6); }
   .uc-hero-sun { width: 320px; height: 320px; right: -140px; bottom: -200px; }
   .uc-hero-ring, .uc-hero-ring2 { display: none; }
-  .uc-search { grid-template-columns: 1fr; }
+  .uc-search, .uc-hero .uc-search { grid-template-columns: 1fr; }
   .uc-search .uc-input, .uc-search .uc-select, .uc-search .uc-btn { height: 52px; }
   .uc-section { padding: 48px 0; }
   .uc-section-head { flex-direction: column; align-items: flex-start; }

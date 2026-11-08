@@ -242,14 +242,18 @@ body { margin: 0; font-family: var(--font-sans); background: var(--surface); col
 /* ---------- Page scaffolding (templates) ---------- */
 .uc-hero { background: var(--navy-deep); color: var(--on-navy); padding: var(--space-9) 0 var(--space-8); position: relative; overflow: hidden; }
 .uc-hero-sun { position: absolute; right: -120px; bottom: -260px; width: 560px; height: 560px; border-radius: 50%; background: var(--navy); }
-.uc-hero-ring { position: absolute; right: -200px; bottom: -340px; width: 720px; height: 720px; border-radius: 50%; border: 1px solid var(--navy-line); }
-.uc-hero-ring2 { position: absolute; right: -280px; bottom: -420px; width: 880px; height: 880px; border-radius: 50%; border: 1px solid var(--navy-line); }
+.uc-hero-ring { position: absolute; right: -200px; bottom: -340px; width: 720px; height: 720px; border-radius: 50%; border: 1px solid var(--navy-line); opacity: .45; }
+.uc-hero-ring2 { position: absolute; right: -280px; bottom: -420px; width: 880px; height: 880px; border-radius: 50%; border: 1px solid var(--navy-line); opacity: .3; }
 .uc-hero-in { position: relative; z-index: 1; }
-.uc-hero-title { font-family: var(--font-display); font-size: 72px; line-height: 72px; font-weight: 700; letter-spacing: -.035em; margin: 0; max-width: 760px; }
-.uc-hero-title em { font-style: normal; color: var(--accent-on-navy); }
-.uc-hero-sub { font-size: 18px; line-height: 28px; color: var(--on-navy-muted); max-width: 600px; margin: var(--space-5) 0 var(--space-6); }
-.uc-hero .uc-search { max-width: 1000px; }
-.uc-hero-chips { margin-top: var(--space-4); display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
+.uc-hero-title { font-family: var(--font-display); font-size: 72px; line-height: 72px; font-weight: 700; letter-spacing: -.035em; margin: 0 0 var(--space-7); max-width: 820px; text-wrap: balance; }
+.uc-hero-title em { display: block; font-style: normal; color: var(--accent-on-navy); }
+/* Supporting copy sits below the search, so it reads quieter than the slogan and the search panel. */
+.uc-hero-sub { font-size: 16px; line-height: 26px; color: var(--on-navy-muted); max-width: 640px; margin: var(--space-6) 0 0; text-wrap: pretty; }
+.uc-hero-sub strong { color: var(--on-navy); font-weight: 600; }
+.uc-hero .uc-search { max-width: 1000px; grid-template-columns: minmax(0, 2.6fr) minmax(0, 1fr) minmax(0, 1fr) auto; box-shadow: 0 0 0 1px rgba(255,255,255,.12), 0 24px 48px rgba(0,0,0,.4); }
+/* Shortcuts recede behind the search; 0.75 keeps chip text and the label above 4.5:1 on navy. */
+.uc-hero-chips { margin-top: var(--space-4); display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; opacity: .75; transition: opacity .15s; }
+.uc-hero-chips:hover, .uc-hero-chips:focus-within { opacity: 1; }
 .uc-hero-chips > span { font-size: 14px; color: var(--on-navy-muted); margin-right: var(--space-1); }
 .uc-section { padding: var(--space-8) 0; }
 .uc-section-sunk { background: var(--surface-sunk); }
