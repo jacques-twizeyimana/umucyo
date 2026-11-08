@@ -1,26 +1,144 @@
-@import "tailwindcss";
+@import "./styles/tokens.css";
+@import "./styles/components.css";
+@import "./styles/site.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ---------- App-level additions (not in the canvas CSS) ---------- */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.uc-gov-flag { display: inline-flex; border-radius: 2px; overflow: hidden; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4); }
+
+/* Menu button for the site header: the full nav needs ~1240px, so it collapses below that */
+.uc-menu-btn { display: none; }
+.uc-mobile-nav { display: none; }
+@media (max-width: 1240px) {
+  .uc-header { position: relative; }
+  .uc-nav { display: none; }
+  .uc-header-actions { margin-left: auto; }
+  .uc-menu-btn { display: inline-flex; }
+  .uc-mobile-nav[data-open="true"] { display: block; position: absolute; left: 0; right: 0; top: 100%; z-index: 20; background: var(--surface); border-bottom: 1px solid var(--line); box-shadow: var(--shadow-2); }
+  .uc-mobile-nav ul { list-style: none; margin: 0; padding: 8px 20px 16px; display: flex; flex-direction: column; }
+  .uc-mobile-nav a { display: flex; align-items: center; min-height: 48px; color: var(--ink); text-decoration: none; font-weight: 500; border-bottom: 1px solid var(--line); }
+  .uc-mobile-nav a[aria-current="page"] { font-weight: 700; box-shadow: inset 3px 0 0 var(--sun); padding-left: 12px; }
+  .uc-mobile-nav .uc-btn { margin-top: 12px; width: 100%; }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Dashboard sidebar */
+.app-nav { width: 264px; flex: none; min-height: calc(100vh - 36px); box-sizing: border-box; background: var(--surface); border-right: 1px solid var(--line); display: flex; flex-direction: column; padding: 20px 16px; gap: 24px; position: sticky; top: 0; align-self: flex-start; max-height: 100vh; overflow-y: auto; }
+.app-nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.app-nav-link { display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 12px; border-radius: 8px; text-decoration: none !important; font-size: 15px; color: var(--ink) !important; font-weight: 500; }
+.app-nav-link:hover { background: var(--surface-sunk); }
+.app-nav-link[aria-current="page"] { background: var(--navy); color: var(--on-navy) !important; font-weight: 600; }
+.app-nav-count { font: 600 12px/1 var(--font-mono); padding: 4px 7px; border-radius: 10px; background: var(--surface-sunk); color: var(--ink-muted); }
+.app-nav-link[aria-current="page"] .app-nav-count { background: var(--sun); color: var(--on-sun); }
+@media (max-width: 900px) {
+  .app { flex-direction: column; }
+  .app-nav { width: 100%; min-height: 0; max-height: none; position: static; border-right: 0; border-bottom: 1px solid var(--line); gap: 16px; }
+  .app-nav ul { flex-direction: row; overflow-x: auto; gap: 4px; padding-bottom: 4px; }
+  .app-nav-link { white-space: nowrap; }
+  .app-nav-foot { display: none !important; }
+  .app-top { position: static; flex-wrap: wrap; height: auto; min-height: 64px; padding-top: 10px; padding-bottom: 10px; }
+  .app-sticky { position: static !important; }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Recommended list cards */
+.app-pick { display: block; width: 100%; text-align: left; cursor: pointer; font: inherit; color: var(--ink); padding: 16px 18px; border-radius: 12px; background: var(--surface-raised); border: 1px solid var(--line); }
+.app-pick:hover { border-color: var(--line-strong); }
+.app-pick[aria-current="true"] { border-color: var(--navy); box-shadow: 0 0 0 3px var(--navy-soft); }
+.app-due { font: 600 12px/1 var(--font-sans); padding: 5px 9px; border-radius: 999px; background: var(--surface-sunk); color: var(--ink); white-space: nowrap; }
+.app-due-soon { background: var(--sun); color: var(--on-sun); }
+.app-new { background: var(--sun) !important; color: var(--on-sun) !important; }
+
+/* Status icon discs (registration done) */
+.st-disc { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; flex: none; }
+.st-ok { background: var(--open-soft); color: var(--open); }
+.st-wait { background: var(--sun-soft); color: var(--ink); }
+.st-todo { background: var(--surface-sunk); color: var(--ink-muted); }
+
+/* Readiness checks (bid workspace) */
+.chk { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; font-weight: 700; flex: none; box-sizing: border-box; }
+.chk-ok { background: var(--open); color: #fff; }
+.chk-no { background: var(--surface-sunk); color: var(--ink-muted); border: 2px solid var(--line-strong); }
+
+/* Registration step dots */
+.ob-dot { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; font: 700 13px/1 var(--font-mono); position: relative; z-index: 1; }
+.ob-dot-done { background: var(--navy); color: var(--on-navy); }
+.ob-dot-now { background: var(--sun); color: var(--on-sun); box-shadow: 0 0 0 4px var(--sun-soft); }
+.ob-dot-todo { background: var(--surface-raised); color: var(--ink-muted); border: 2px solid var(--line-strong); }
+.ob-radio { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--line-strong); }
+.ob-choice[data-checked="true"] .ob-radio { border-color: var(--navy); background: var(--navy); box-shadow: inset 0 0 0 5px var(--surface-raised); }
+
+/* Awards tabs */
+.aw-tab { display: inline-flex; align-items: center; height: 48px; padding: 0 20px; text-decoration: none; font: inherit; font-weight: 600; font-size: 15px; border-radius: 8px 8px 0 0; white-space: nowrap; color: var(--ink-muted); background: none; border: 1px solid transparent; cursor: pointer; }
+.aw-tab[aria-current="page"] { background: var(--surface); color: var(--ink); box-shadow: inset 0 3px 0 var(--sun); border-color: var(--line); border-bottom-color: var(--surface); margin-bottom: -1px; }
+
+/* Alert mode boxes (preferences) */
+.pref-mode { display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: 12px; cursor: pointer; border: 1px solid var(--line); background: var(--surface-raised); }
+.pref-mode[data-on="true"] { border-color: var(--navy); background: var(--navy-soft); }
+
+/* Highlighted text in the How-to-bid hero */
+.hl { background: linear-gradient(transparent 62%, var(--sun) 62%); }
+
+/* Skip link: hidden until focused */
+.skip-link { position: absolute; left: 16px; top: -100px; z-index: 50; padding: 10px 16px; border-radius: var(--radius-sm); background: var(--navy); color: var(--on-navy) !important; font-weight: 600; }
+.skip-link:focus { top: 8px; }
+
+/* How-to-bid hero title (display-l) */
+.htb-title { margin: 0; font-family: var(--font-display); font-size: 52px; line-height: 56px; font-weight: 700; letter-spacing: -0.03em; max-width: 720px; }
+@media (max-width: 900px) { .htb-title { font-size: 38px; line-height: 42px; } }
+
+.aw-q { grid-column: span 2; }
+@media (max-width: 600px) { .aw-q { grid-column: auto; } }
+
+/* Registration done hero */
+.done-hero { position: relative; overflow: hidden; background: var(--navy-deep); color: var(--on-navy); border-radius: var(--radius-lg); padding: 48px; }
+.done-hero-sun { position: absolute; right: -80px; bottom: -180px; width: 340px; height: 340px; border-radius: 50%; background: var(--sun); }
+.done-title { margin: 0; font-family: var(--font-display); font-size: 44px; line-height: 48px; font-weight: 700; letter-spacing: -0.03em; }
+@media (max-width: 900px) {
+  .done-hero { padding: 32px 24px; }
+  .done-title { font-size: 32px; line-height: 36px; }
+  .done-hero-sun { width: 200px; height: 200px; right: -80px; bottom: -120px; }
+}
+
+.btn-danger-text { color: var(--danger) !important; }
+
+/* Bid cards (My bids) */
+.bid-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px 32px; align-items: start; }
+.bid-card-side { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; min-width: 220px; text-align: right; }
+@media (max-width: 700px) {
+  .bid-card { grid-template-columns: 1fr; }
+  .bid-card-side { align-items: flex-start; text-align: left; min-width: 0; }
+}
+
+/* Bid receipt hero */
+.receipt-hero { position: relative; overflow: hidden; background: var(--navy); color: var(--on-navy); border-radius: var(--radius-lg); padding: 36px 40px; }
+.receipt-ring { position: absolute; right: -60px; top: -120px; width: 260px; height: 260px; border-radius: 50%; border: 1px solid var(--navy-line); }
+.receipt-sun { position: absolute; right: 40px; bottom: -70px; width: 140px; height: 140px; border-radius: 50%; background: var(--sun); }
+.receipt-title { margin: 0; font-family: var(--font-display); font-size: 36px; line-height: 42px; font-weight: 700; letter-spacing: -0.025em; }
+@media (max-width: 900px) {
+  .receipt-hero { padding: 28px 24px; }
+  .receipt-title { font-size: 28px; line-height: 34px; }
+  .receipt-sun { width: 90px; height: 90px; right: -20px; bottom: -40px; }
+}
+
+/* Small phones: keep the header on one line */
+@media (max-width: 560px) {
+  .uc-header .uc-logo-sub, .uc-header .uc-logo-rule { display: none; }
+  .uc-header .uc-logo { gap: 10px; }
+  .uc-header-actions { gap: 4px; }
+}
+
+/* Visually hidden text: pin it to its containing block so it never escapes scroll containers */
+.uc-sr { top: 0; left: 0; margin: -1px; padding: 0; border: 0; }
+
+@media (max-width: 900px) {
+  .uc-detail { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .ob-card { padding: 20px; }
+  .ob-otp { gap: 6px; }
+  .ob-otp input { flex: 1 1 0; min-width: 0; max-width: 52px; height: 52px; font-size: 20px; }
 }
