@@ -63,12 +63,12 @@ export function BidWorkspace() {
           {!up.tech || !up.form ? (
             <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 16 }}>
               {!up.tech ? (
-                <Button size="sm" icon="download" onClick={() => setUp({ ...up, tech: true })}>
+                <Button size="sm" icon="upload" onClick={() => setUp({ ...up, tech: true })}>
                   Upload technical proposal
                 </Button>
               ) : null}
               {!up.form ? (
-                <Button size="sm" icon="download" onClick={() => setUp({ ...up, form: true })}>
+                <Button size="sm" icon="upload" onClick={() => setUp({ ...up, form: true })}>
                   Upload quotation form
                 </Button>
               ) : null}

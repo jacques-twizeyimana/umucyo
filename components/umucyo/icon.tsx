@@ -34,6 +34,7 @@ const PATHS = {
     </>
   ),
   download: <path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M4.5 19.5h15" />,
+  upload: <path d="M12 15V4m0 0L7.5 8.5M12 4l4.5 4.5M4.5 19.5h15" />,
   check: <path d="m5 12.5 4.5 4.5L19 7.5" />,
   "check-circle": (
     <>
