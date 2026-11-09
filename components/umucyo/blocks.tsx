@@ -75,51 +75,49 @@ export function DocumentChecklist({ items }: { items: RequiredDoc[] }) {
 
 /* ---------------- ActionPanel ---------------- */
 export function ActionPanel({
-  deadline,
   days,
   hours,
-  label = "Submission closes",
   cta = "Start your bid",
   ctaHref = "/dashboard/bids/prepare",
-  downloadLabel = "Download tender documents",
+  downloadLabel = "Download all documents",
+  downloadMeta,
   footnote = "Bids are accepted only through Umucyo. The system closes submission automatically at the deadline (Kigali time, CAT). Help: call 3131.",
 }: {
-  deadline: string;
   days?: number;
   hours?: number;
-  label?: string;
   cta?: string;
   ctaHref?: string;
   downloadLabel?: string;
+  /** File count and size under the download button, e.g. "4 files · 12 MB · .zip". */
+  downloadMeta?: string;
   footnote?: string;
 }) {
-  const pad = (n: number) => String(n).padStart(2, "0");
+  // The closing date itself lives in Key dates; the panel only keeps a short time-left reminder.
+  const urgent = days != null && days <= 7;
   return (
     <aside className="uc-panel" aria-label="Bid actions">
-      {/* The countdown turns yellow only when the deadline is a week away or less. */}
-      <div className={cx("uc-panel-head uc-on-navy", days != null && days <= 7 && "uc-panel-urgent")}>
-        <span className="uc-deadline-label">{label}</span>
-        <p className="uc-panel-date">{deadline}</p>
-        {days != null ? (
-          <div className="uc-panel-count" role="timer" aria-label={`${days} days ${hours ?? 0} hours left`}>
-            <div>
-              <span className="uc-panel-fig">{pad(days)}</span>
-              <span className="uc-panel-unit">days</span>
-            </div>
-            <div>
-              <span className="uc-panel-fig">{pad(hours ?? 0)}</span>
-              <span className="uc-panel-unit">hours</span>
-            </div>
-          </div>
-        ) : null}
-      </div>
       <div className="uc-panel-body">
         <Button variant="primary" size="lg" full iconRight="arrow-right" href={ctaHref}>
           {cta}
         </Button>
-        <Button variant="secondary" full icon="download" href="#files">
-          {downloadLabel}
-        </Button>
+        {days != null ? (
+          <p className={cx("uc-panel-left", urgent && "uc-panel-left-urgent")}>
+            <Icon name="clock" size={16} />
+            <span>
+              {days} {days === 1 ? "day" : "days"}, {hours ?? 0} {hours === 1 ? "hour" : "hours"} left to submit ·{" "}
+              <a href="#dates">Key dates</a>
+            </span>
+          </p>
+        ) : null}
+        <div className="uc-panel-dl">
+          <Button variant="secondary" size="lg" full icon="download">
+            {downloadLabel}
+          </Button>
+          <p className="uc-panel-dl-meta">
+            {downloadMeta ? <span>{downloadMeta}</span> : null}
+            <a href="#files">See each file</a>
+          </p>
+        </div>
         <ul className="uc-panel-list">
           <li>
             <Button variant="ghost" size="sm" icon="question" href="#qa">

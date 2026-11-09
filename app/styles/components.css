@@ -159,6 +159,14 @@ body { margin: 0; font-family: var(--font-sans); background: var(--surface); col
 .uc-panel-urgent .uc-panel-fig { color: var(--sun); }
 .uc-panel-unit { font-size: 12px; line-height: 16px; color: var(--on-navy-muted); }
 .uc-panel-body { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); }
+.uc-panel-left { display: flex; gap: var(--space-2); align-items: flex-start; margin: 0 0 var(--space-2); padding: var(--space-2) var(--space-1) 0; font-size: 14px; line-height: 20px; color: var(--ink-muted); }
+.uc-panel-left .uc-icon { flex: none; margin-top: 2px; }
+.uc-panel-left a { white-space: nowrap; }
+/* Yellow only when the deadline is a week away or less. */
+.uc-panel-left-urgent { background: var(--sun-soft); color: var(--ink); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); }
+.uc-panel-dl { display: flex; flex-direction: column; gap: var(--space-2); }
+.uc-panel-dl-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-1) var(--space-3); margin: 0; padding: 0 var(--space-1); font-size: 13px; line-height: 18px; color: var(--ink-muted); }
+.uc-panel-dl-meta span { font-family: var(--font-mono); }
 .uc-panel-list { list-style: none; margin: var(--space-2) 0 0; padding: var(--space-3) 0 0; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: var(--space-1); }
 .uc-panel-list .uc-btn { justify-content: flex-start; width: 100%; padding: 0 var(--space-2); }
 .uc-panel-foot { padding: var(--space-4) var(--space-5); background: var(--surface-sunk); border-top: 1px solid var(--line); font-size: 13px; line-height: 19px; color: var(--ink-muted); display: grid; grid-template-columns: 18px 1fr; gap: var(--space-2); }
