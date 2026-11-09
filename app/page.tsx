@@ -70,9 +70,9 @@ export default function Home() {
             </h1>
             <SearchBar placeholder="What can you supply? e.g. laptops, road works" />
             <p className="uc-hero-sub">
-              1,284 open tenders right now from every public buyer in Rwanda,
-              written plainly with every date, document and site visit up front.
-              Search free, bid online, and see every award.
+              Every public tender in Rwanda, in one place and in plain language.
+              1,284 are open today. Search free, bid online, and see who wins
+              each contract.
             </p>
             <HeroChips />
           </div>
