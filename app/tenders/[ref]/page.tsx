@@ -154,6 +154,18 @@ async function TenderContent({
               </span>
             </p>
 
+            <div className="uc-bid-bar">
+              <p>
+                <strong>
+                  {left.days}d {left.hours}h left to submit
+                </strong>
+                Submit through Umucyo only
+              </p>
+              <Button variant="primary" iconRight="arrow-right" href="/dashboard/bids/prepare">
+                Start your bid
+              </Button>
+            </div>
+
             <dl className="uc-summary-grid">
               <div>
                 <dt>What they need</dt>

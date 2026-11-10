@@ -45,20 +45,16 @@ export function OnbSteps({
           : "Register your business"}
       </p>
       <p
-        style={{ margin: "0 0 24px", fontSize: 14, color: "var(--ink-muted)" }}
+        style={{ margin: "0 0 20px", fontSize: 14, color: "var(--ink-muted)" }}
       >
-        Step {step} of {defs.length} · about {type === "individual" ? 5 : 10}{" "}
-        minutes
+        Step {step} of {defs.length}
+        <span className="ob-now-label"> · {defs[step - 1]?.[0]}</span>
+        <span className="ob-eta">
+          {" "}
+          · about {type === "individual" ? 5 : 10} minutes
+        </span>
       </p>
-      <ol
-        style={{
-          listStyle: "none",
-          margin: 0,
-          padding: 0,
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
+      <ol className="ob-steps-list">
         {defs.map(([label, hint], i) => {
           const n = i + 1;
           const done = n < step;
@@ -67,13 +63,7 @@ export function OnbSteps({
             <li
               key={label}
               aria-current={now ? "step" : undefined}
-              style={{
-                display: "grid",
-                gridTemplateColumns: "32px 1fr",
-                gap: 14,
-                position: "relative",
-                paddingBottom: 24,
-              }}
+              className={`ob-step ${done ? "is-done" : now ? "is-now" : ""}`}
             >
               <span
                 aria-hidden="true"
@@ -81,8 +71,9 @@ export function OnbSteps({
               >
                 {done ? "✓" : n}
               </span>
-              <span style={{ paddingTop: 5 }}>
+              <span className="ob-step-text" style={{ paddingTop: 5 }}>
                 <span
+                  className="ob-step-label"
                   style={{
                     display: "block",
                     fontSize: 15,
@@ -95,6 +86,7 @@ export function OnbSteps({
                   {done ? <span className="uc-sr"> (completed)</span> : null}
                 </span>
                 <span
+                  className="ob-step-hint"
                   style={{
                     display: "block",
                     fontSize: 13,
@@ -111,6 +103,7 @@ export function OnbSteps({
         })}
       </ol>
       <div
+        className="ob-progress-note"
         style={{
           marginTop: 8,
           padding: 16,

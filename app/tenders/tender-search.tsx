@@ -71,6 +71,7 @@ function TenderSearchInner() {
   const [reqs, setReqs] = useState<Set<Req>>(new Set());
   const [sort, setSort] = useState<(typeof SORTS)[number]>(SORTS[0]);
   const [page, setPage] = useState(1);
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
   const base = useMemo(() => TENDERS.filter((t) => matchesQuery(t, q)), [q]);
 
@@ -153,16 +154,26 @@ function TenderSearchInner() {
 
       {/* Body: filters + results */}
       <div
-        className="uc-container"
-        style={{ display: "flex", flexWrap: "wrap", gap: 48, paddingTop: 40, paddingBottom: 64, alignItems: "flex-start" }}
+        className="uc-container pg-search-body"
       >
-        <aside aria-label="Filters" style={{ flex: "1 1 260px", maxWidth: 300, display: "flex", flexDirection: "column", gap: 24 }}>
+        <aside aria-label="Filters" className="pg-filters" data-open={filtersOpen}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <h2 style={{ margin: 0, fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 650 }}>Filters</h2>
             <button type="button" className="uc-btn uc-btn-link" onClick={clearAll}>
               Clear all
             </button>
           </div>
+          <button
+            type="button"
+            className="pg-filters-toggle"
+            aria-expanded={filtersOpen}
+            aria-controls="filters-body"
+            onClick={() => setFiltersOpen(!filtersOpen)}
+          >
+            <span>{filtersOpen ? "Hide filters" : "Show filters"}</span>
+            {active.length ? <span className="n">{active.length} active</span> : null}
+          </button>
+          <div id="filters-body" className="pg-filters-body">
 
           <fieldset className="pg-fieldset">
             <legend>Status</legend>
@@ -233,6 +244,7 @@ function TenderSearchInner() {
               </label>
             ))}
           </fieldset>
+          </div>
         </aside>
 
         <section
